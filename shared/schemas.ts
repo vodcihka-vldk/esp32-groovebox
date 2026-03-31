@@ -396,14 +396,30 @@ export function arduinoToWeb(arduinoProject: ArduinoProject): Project {
 export function createEmptyProject(name: string = "New Beat"): Project {
   return ProjectSchema.parse({
     name,
+    bpm: 132,
+    masterVolume: 80,
+    swing: 50,
     patterns: Array.from({ length: 8 }, (_, pIndex) => ({
       id: `pattern_${pIndex}`,
       name: `Pattern ${pIndex + 1}`,
+      length: '64',
+      swing: 50,
       tracks: Array.from({ length: 8 }, (_, tIndex) => ({
         id: `track_${tIndex}`,
         name: `Track ${tIndex + 1}`,
         sampleId: `sample_${tIndex}`,
-        steps: Array.from({ length: 64 }, () => ({ active: false }))
+        channel: {
+          volume: 80,
+          pitch: 50,
+          sample: tIndex,
+          drive: 0,
+          start: 0,
+          length: 100,
+          attack: 5,
+          decay: 50
+        },
+        steps: Array.from({ length: 64 }, () => ({ active: false })),
+        parameterLocks: []
       }))
     })),
     mixer: {
@@ -414,6 +430,19 @@ export function createEmptyProject(name: string = "New Beat"): Project {
         mute: false,
         solo: false
       }))
+    },
+    dsp: {
+      drive: 0,
+      reverb: 0,
+      delay: 0,
+      bitcrush: 0,
+      eqHigh: 0,
+      eqMid: 0,
+      eqLow: 0
+    },
+    metadata: {
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
     }
   });
 }
