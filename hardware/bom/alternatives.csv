@@ -1,0 +1,17 @@
+Reference,Original,Alternative1,Alternative2,Notes
+U1,ESP32-WROOM-32,ESP32-WROOM-32D,ESP32-S2,D versions have more RAM, S2 is single-core
+U2,AMS1117-3.3,AP2112-3.3,RT9013-33GB,AP2112 has better thermal performance
+U3,PCM5102A,CS4344,TDA1543,CS4344 is simpler, TDA1543 is classic R-2R
+J1,USB_C_Receptacle_HRO_TYPE-C-31-M-12,USB_C_Receptacle_Jing_2CTHJ-4P,USB_C_Receptacle_HRO_TYPE-C-16P,Jing is cheaper, 16P has more pins
+J2,Jack_3.5mm_QingPu_WQP-PJ398M,Jack_3.5mm_CUI_SJ1-3523N,Jack_3.5mm_Switchcraft_35RAPC4BH3,CUI is more robust, Switchcraft is premium
+C1,C_0603_1608Metric,C_0402_1005Metric,C_0805_2012Metric,0402 saves space, 0805 is easier to hand-solder
+C2,C_0603_1608Metric,C_0402_1005Metric,C_0805_2012Metric,0402 saves space, 0805 is easier to hand-solder
+R1,R_0603_1608Metric,R_0402_1005Metric,R_0805_2012Metric,0402 saves space, 0805 is easier to hand-solder
+SW1,SW_Push_1P1NO_NO_6x6mm_H,SW_Push_1P1NO_NO_12x12mm,SW_Push_SPST_NO_EVQP7J,12x12mm is easier to press, EVQP7J is premium
+ENC1,Rotary_Encoder_Alps_EC11E,Rotary_Encoder_Bourns_PEC11R,Rotary_Encoder_Alps_EC12E,Bourns has better feel, EC12E has detent
+LCD1,SSD1306-128x64_OLED_I2C,SH1106-128x64_OLED_I2C,SSD1306-128x32_OLED_I2C,SH1106 is compatible, 32-line is cheaper
+LED1,WS2812B,SK6812,APA102,SK6812 has better white balance, APA102 uses clock line
+Q1,BSS138,2N7002,DMG2302UX,2N7002 is cheaper, DMG2302 has lower Rds(on)
+Q2,BSS138,2N7002,DMG2302UX,2N7002 is cheaper, DMG2302 has lower Rds(on)
+Q3,BSS138,2N7002,DMG2302UX,2N7002 is cheaper, DMG2302 has lower Rds(on)
+Q4,BSS138,2N7002,DMG2302UX,2N7002 is cheaper, DMG2302 has lower Rds(on)

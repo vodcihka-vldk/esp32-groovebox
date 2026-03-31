@@ -1,0 +1,213 @@
+EESchema Schematic File Version 4
+LIBS:esp32_groovebox-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 1
+Title "ESP32 Groovebox - Audio Section"
+Date "2024-01-01"
+Rev "1.0"
+Comp "GrooveBox Project"
+Comment1 "Audio DAC and Output"
+Comment2 "I2S Audio Interface"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Audio:PCM5102A U2
+U 1 1 5F8B0C30
+P 3500 2000
+F 0 "U2" H 3500 2767 50  0000 C CNN
+F 1 "PCM5102A" H 3500 2676 50  0000 C CNN
+F 2 "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm" H 3500 2000 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/pcm5102a.pdf" H 3500 2000 50  0001 C CNN
+	1    3500 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C3
+U 1 1 5F8B0C31
+P 2500 1800
+F 0 "C3" H 2592 1846 50  0000 L CNN
+F 1 "100nF" H 2592 1755 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2500 1800 50  0001 C CNN
+F 3 "~" H 2500 1800 50  0001 C CNN
+	1    2500 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C4
+U 1 1 5F8B0C32
+P 4500 1800
+F 0 "C4" H 4592 1846 50  0000 L CNN
+F 1 "100nF" H 4592 1755 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 4500 1800 50  0001 C CNN
+F 3 "~" H 4500 1800 50  0001 C CNN
+	1    4500 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C5
+U 1 1 5F8B0C33
+P 2500 2200
+F 0 "C5" H 2592 2246 50  0000 L CNN
+F 1 "10uF" H 2592 2155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2500 2200 50  0001 C CNN
+F 3 "~" H 2500 2200 50  0001 C CNN
+	1    2500 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C6
+U 1 1 5F8B0C34
+P 4500 2200
+F 0 "C6" H 4592 2246 50  0000 L CNN
+F 1 "10uF" H 4592 2155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4500 2200 50  0001 C CNN
+F 3 "~" H 4500 2200 50  0001 C CNN
+	1    4500 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR04
+U 1 1 5F8B0C35
+P 2500 1400
+F 0 "#PWR04" H 2500 1250 50  0001 C CNN
+F 1 "+3V3" H 2515 1573 50  0000 C CNN
+F 2 "" H 2500 1400 50  0001 C CNN
+F 3 "" H 2500 1400 50  0001 C CNN
+	1    2500 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 5F8B0C36
+P 3500 2800
+F 0 "#PWR05" H 3500 2550 50  0001 C CNN
+F 1 "GND" H 3505 2627 50  0000 C CNN
+F 2 "" H 3500 2800 50  0001 C CNN
+F 3 "" H 3500 2800 50  0001 C CNN
+	1    3500 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 1400 2500 1700
+Wire Wire Line
+	2500 1900 2500 2100
+Wire Wire Line
+	2500 2300 2500 2800
+Wire Wire Line
+	2500 2800 3500 2800
+Wire Wire Line
+	4500 2800 4500 2300
+Wire Wire Line
+	4500 2100 4500 1900
+Wire Wire Line
+	3500 2700 3500 2800
+Connection ~ 3500 2800
+Wire Wire Line
+	2500 1700 3000 1700
+Connection ~ 2500 1700
+Wire Wire Line
+	2500 1900 3000 1900
+Connection ~ 2500 1900
+Wire Wire Line
+	4000 1700 4500 1700
+Wire Wire Line
+	4500 1700 4500 1900
+Connection ~ 4500 1900
+Wire Wire Line
+	4000 1900 4500 1900
+$Comp
+L Audio:Jack_3.5mm_SwitchTR J2
+U 1 1 5F8B0C37
+P 5500 2000
+F 0 "J2" H 5130 2325 50  0000 C CNN
+F 1 "Audio_Out" H 5130 2234 50  0000 C CNN
+F 2 "Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398M" H 5500 2000 50  0001 C CNN
+F 3 "~" H 5500 2000 50  0001 C CNN
+	1    5500 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C7
+U 1 1 5F8B0C38
+P 4800 1800
+F 0 "C7" H 4892 1846 50  0000 L CNN
+F 1 "10uF" H 4892 1755 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4800 1800 50  0001 C CNN
+F 3 "~" H 4800 1800 50  0001 C CNN
+	1    4800 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C8
+U 1 1 5F8B0C39
+P 4800 2200
+F 0 "C8" H 4892 2246 50  0000 L CNN
+F 1 "10uF" H 4892 2155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4800 2200 50  0001 C CNN
+F 3 "~" H 4800 2200 50  0001 C CNN
+	1    4800 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 2100 4300 2100
+Wire Wire Line
+	4300 2100 4300 1800
+Wire Wire Line
+	4300 1800 4700 1800
+Wire Wire Line
+	4700 1900 4700 2200
+Wire Wire Line
+	4000 2200 4700 2200
+Connection ~ 4700 2200
+Wire Wire Line
+	4700 2200 4800 2200
+Wire Wire Line
+	4800 1900 4800 2100
+Wire Wire Line
+	4800 2100 5300 2100
+Wire Wire Line
+	4800 1700 4800 1800
+Wire Wire Line
+	4800 1800 5300 1800
+Connection ~ 4800 1800
+Wire Wire Line
+	4800 2300 4800 2800
+Wire Wire Line
+	4800 2800 3500 2800
+Wire Wire Line
+	5300 1900 5300 2800
+Wire Wire Line
+	5300 2800 4800 2800
+Connection ~ 4800 2800
+Connection ~ 3500 2800
+$Comp
+L Device:R_Small R2
+U 1 1 5F8B0C3A
+P 2800 1600
+F 0 "R2" V 2604 1600 50  0000 C CNN
+F 1 "100K" V 2695 1600 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 2800 1600 50  0001 C CNN
+F 3 "~" H 2800 1600 50  0001 C CNN
+	1    2800 1600
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 5F8B0C3B
+P 2500 1600
+F 0 "#PWR06" H 2500 1350 50  0001 C CNN
+F 1 "GND" H 2505 1427 50  0000 C CNN
+F 2 "" H 2500 1600 50  0001 C CNN
+F 3 "" H 2500 1600 50  0001 C CNN
+	1    2500 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 1600 2500 1600
+Wire Wire Line
+	2900 1600 3000 1600
+$EndSCHEMATC

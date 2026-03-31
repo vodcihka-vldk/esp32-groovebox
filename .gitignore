@@ -1,0 +1,37 @@
+# ── Build / IDE ────────────────────────────────────
+.pio/
+.vscode/
+.idea/
+*.sublime-*
+build/
+cmake-build-*/
+
+# ── Node / Web ─────────────────────────────────────
+node_modules/
+web/dist/
+web/node_modules/
+*.tsbuildinfo
+
+# ── Python ─────────────────────────────────────────
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# ── OS junk ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.lck
+
+# ── KiCad autosave / backups ──────────────────────
+*-backups/
+_autosave-*
+~*
+fp-info-cache
+
+# ── Sample data backups ───────────────────────────
+*.inc.bak
+
+# ── Misc ───────────────────────────────────────────
+*.log
+package-lock.json

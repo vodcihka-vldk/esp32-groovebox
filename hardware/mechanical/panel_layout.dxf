@@ -1,0 +1,455 @@
+0
+SECTION
+  2
+HEADER
+  9
+$ACADVER
+  1
+AC1021
+  9
+$HANDSEED
+  5
+FFFF
+  9
+$DWGCODEPAGE
+  3
+ANSI_1252
+  9
+$INSUNITS
+ 70
+     4
+  9
+$INSUNITSDEFTARGET
+ 70
+     4
+  9
+$MEASUREMENT
+ 70
+     1
+  9
+$LUPREC
+ 70
+     4
+  9
+$ACADVER
+  1
+AC1021
+  9
+$HANDSEED
+  5
+FFFF
+  9
+$DWGCODEPAGE
+  3
+ANSI_1252
+  0
+ENDSEC
+  2
+TABLES
+  0
+TABLE
+  2
+LAYER
+  70
+     1
+  0
+LAYER
+  2
+0
+ 70
+     0
+ 62
+     7
+  6
+Continuous
+  0
+ENDTAB
+  0
+TABLE
+  2
+STYLE
+  70
+     1
+  0
+STYLE
+  2
+Standard
+  70
+     0
+  40
+0.0
+ 41
+1.0
+ 50
+0.0
+ 71
+0
+ 42
+0.2
+  3
+txt
+  4
+  0
+ENDTAB
+  0
+TABLE
+  2
+VIEW
+  70
+     1
+  0
+ENDTAB
+  0
+TABLE
+  2
+UCS
+  70
+     1
+  0
+ENDTAB
+  0
+TABLE
+  2
+APPID
+  70
+     1
+  0
+ENDTAB
+  0
+TABLE
+  2
+DIMSTYLE
+  70
+     1
+  0
+ENDTAB
+  0
+TABLE
+  2
+BLOCK_RECORD
+  70
+     1
+  0
+BLOCK_RECORD
+  2
+*Model_Space
+ 70
+     1
+  0
+ENDTAB
+  0
+ENDSEC
+  2
+ENTITIES
+  0
+LWPOLYLINE
+  5
+100
+  8
+0
+  6
+Continuous
+  70
+     1
+ 90
+     4
+ 10
+0.0
+ 20
+0.0
+ 10
+200.0
+ 20
+0.0
+ 10
+200.0
+ 20
+100.0
+ 10
+0.0
+ 20
+100.0
+  0
+CIRCLE
+  5
+101
+  8
+0
+  6
+Continuous
+ 10
+50.0
+ 20
+50.0
+ 40
+15.0
+  0
+CIRCLE
+  5
+102
+  8
+0
+  6
+Continuous
+ 10
+150.0
+ 20
+50.0
+ 40
+15.0
+  0
+CIRCLE
+  5
+103
+  8
+0
+  6
+Continuous
+ 10
+100.0
+ 20
+20.0
+ 40
+8.0
+  0
+CIRCLE
+  5
+104
+  8
+0
+  6
+Continuous
+ 10
+100.0
+ 20
+80.0
+ 40
+8.0
+  0
+RECTANGLE
+  5
+105
+  8
+0
+  6
+Continuous
+ 10
+10.0
+ 20
+10.0
+ 11
+30.0
+ 21
+30.0
+  0
+RECTANGLE
+  5
+106
+  8
+0
+  6
+Continuous
+ 10
+170.0
+ 20
+10.0
+ 11
+190.0
+ 21
+30.0
+  0
+RECTANGLE
+  5
+107
+  8
+0
+  6
+Continuous
+ 10
+10.0
+ 20
+70.0
+ 11
+30.0
+ 21
+90.0
+  0
+RECTANGLE
+  5
+108
+  8
+0
+  6
+Continuous
+ 10
+170.0
+ 20
+70.0
+ 11
+190.0
+ 21
+90.0
+  0
+TEXT
+  5
+109
+  8
+0
+  6
+Continuous
+ 10
+20.0
+ 20
+20.0
+ 40
+5.0
+  1
+PLAY
+  0
+TEXT
+  5
+110
+  8
+0
+  6
+Continuous
+ 10
+180.0
+ 20
+20.0
+ 40
+5.0
+  1
+STOP
+  0
+TEXT
+  5
+111
+  8
+0
+  6
+Continuous
+ 10
+20.0
+ 20
+80.0
+ 40
+5.0
+  1
+REC
+  0
+TEXT
+  5
+112
+  8
+0
+  6
+Continuous
+ 10
+180.0
+ 20
+80.0
+ 40
+5.0
+  1
+SHIFT
+  0
+TEXT
+  5
+113
+  8
+0
+  6
+Continuous
+ 10
+50.0
+ 20
+50.0
+ 40
+3.0
+  1
+ENC
+  0
+TEXT
+  5
+114
+  8
+0
+  6
+Continuous
+ 10
+150.0
+ 20
+50.0
+ 40
+3.0
+  1
+BPM
+  0
+TEXT
+  5
+115
+  8
+0
+  6
+Continuous
+ 10
+100.0
+ 20
+20.0
+ 40
+3.0
+  1
+LCD
+  0
+TEXT
+  5
+116
+  8
+0
+  6
+Continuous
+ 10
+100.0
+ 20
+80.0
+ 40
+3.0
+  1
+LED
+  0
+TEXT
+  5
+117
+  8
+0
+  6
+Continuous
+ 10
+100.0
+ 20
+50.0
+ 40
+8.0
+  1
+ESP32 GROOVEBOX
+  0
+TEXT
+  5
+118
+  8
+0
+  6
+Continuous
+ 10
+100.0
+ 20
+95.0
+  40
+3.0
+  1
+v1.0
+  0
+ENDSEC
+  0
+EOF

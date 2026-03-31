@@ -1,0 +1,75 @@
+{
+  "name": "groovebox-monorepo",
+  "version": "1.0.0",
+  "description": "ESP32 Groovebox - Cross-platform drum machine with web interface",
+  "private": true,
+  "workspaces": [
+    "web",
+    "tools"
+  ],
+  "scripts": {
+    "dev": "npm run dev:web",
+    "dev:web": "cd web && npm run dev",
+    "build": "npm run build:web && npm run build:firmware",
+    "build:web": "cd web && npm run build",
+    "build:firmware": "cd firmware && pio run",
+    "test": "npm run test:web && npm run test:shared",
+    "test:web": "cd web && npm run test",
+    "test:shared": "tsx tools/test/cross-platform-tests.ts",
+    "sync": "npm run sync:logic && npm run sync:types",
+    "sync:logic": "bash tools/sync/sync-logic.sh",
+    "sync:types": "bash tools/sync/sync-types.sh",
+    "validate": "npm run validate:patterns && npm run validate:json",
+    "validate:patterns": "tsx tools/sync/validate-patterns.ts",
+    "validate:json": "tsx tools/sync/convert-json.ts --validate",
+    "convert": "tsx tools/sync/convert-json.ts",
+    "docs": "npm run docs:generate && npm run docs:serve",
+    "docs:generate": "typedoc --out docs/api shared/**/*.ts",
+    "docs:serve": "cd docs && python -m http.server 8080",
+    "lint": "npm run lint:web && npm run lint:shared",
+    "lint:web": "cd web && npm run lint",
+    "lint:shared": "eslint shared/**/*.ts",
+    "format": "npm run format:web && npm run format:shared",
+    "format:web": "cd web && npm run format",
+    "format:shared": "prettier --write shared/**/*.ts",
+    "setup": "npm run setup:web && npm run setup:tools",
+    "setup:web": "cd web && npm install",
+    "setup:tools": "npm install -g tsx typedoc",
+    "clean": "npm run clean:web && npm run clean:firmware",
+    "clean:web": "cd web && rm -rf dist node_modules",
+    "clean:firmware": "cd firmware && pio run --target clean"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typedoc": "^0.25.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": [
+    "esp32",
+    "groovebox",
+    "drum-machine",
+    "sampler",
+    "sequencer",
+    "web-audio",
+    "typescript",
+    "react",
+    "cross-platform"
+  ],
+  "author": "ESP32 Groovebox Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/esp32-groovebox/esp32-groovebox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/esp32-groovebox/esp32-groovebox/issues"
+  },
+  "homepage": "https://github.com/esp32-groovebox/esp32-groovebox#readme"
+}

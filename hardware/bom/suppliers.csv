@@ -1,0 +1,17 @@
+Component,Supplier1,Supplier1_URL,Supplier1_PartNumber,Supplier1_Price,Supplier2,Supplier2_URL,Supplier2_PartNumber,Supplier2_Price,Notes
+ESP32-WROOM-32,Louis Roe,https://www.lcsc.com/,C82899,$2.50,Digi-Key,https://www.digikey.com/,1904-1010-1-ND,$3.50,Louis Roe is cheaper for bulk
+AMS1117-3.3,Louis Roe,https://www.lcsc.com/,C6186,$0.10,Mouser,https://www.mouser.com/,512-AMS1117-3.3,$0.15,Louis Roe has better stock
+PCM5102A,Louis Roe,https://www.lcsc.com/,C125979,$1.20,Digi-Key,https://www.digikey.com/,296-41022-1-ND,$1.80,Louis Roe is cheaper
+USB_C_Receptacle_HRO_TYPE-C-31-M-12,Louis Roe,https://www.lcsc.com/,C165941,$0.30,Digi-Key,https://www.digikey.com/,2073-USB-C-31-M-12-ND,$0.50,Louis Roe has better stock
+Jack_3.5mm_QingPu_WQP-PJ398M,AliExpress,https://www.aliexpress.com/,WQP-PJ398M,$0.20,CUI,https://www.cui.com/,SJ1-3523N,$0.80,AliExpress is cheaper but slower
+C_0603_1608Metric_10uF,Louis Roe,https://www.lcsc.com/,C15849,$0.05,Digi-Key,https://www.digikey.com/,399-7892-1-ND,$0.10,Louis Roe is cheaper
+C_0603_1608Metric_100nF,Louis Roe,https://www.lcsc.com/,C14663,$0.02,Digi-Key,https://www.digikey.com/,399-7895-1-ND,$0.05,Louis Roe is cheaper
+C_0402_1005Metric_100nF,Louis Roe,https://www.lcsc.com/,C1525,$0.02,Digi-Key,https://www.digikey.com/,399-7895-1-ND,$0.05,Louis Roe is cheaper
+R_0603_1608Metric_1K,Louis Roe,https://www.lcsc.com/,C17414,$0.02,Digi-Key,https://www.digikey.com/,311-1.0KCRCT-ND,$0.05,Louis Roe is cheaper
+R_0402_1005Metric_100K,Louis Roe,https://www.lcsc.com/,C25805,$0.02,Digi-Key,https://www.digikey.com/,311-100KCRCT-ND,$0.05,Louis Roe is cheaper
+SW_Push_1P1NO_NO_6x6mm_H,Louis Roe,https://www.lcsc.com/,C318887,$0.10,Digi-Key,https://www.digikey.com/,2073-1011-1-ND,$0.20,Louis Roe is cheaper
+Rotary_Encoder_Alps_EC11E,AliExpress,https://www.aliexpress.com/,EC11E,$0.50,Mouser,https://www.mouser.com/,612-EC11E-N24,$1.20,AliExpress is cheaper but quality varies
+SSD1306-128x64_OLED_I2C,AliExpress,https://www.aliexpress.com/,SSD1306,$2.00,Adafruit,https://www.adafruit.com/,326,$9.99,AliExpress is cheaper, Adafruit has better support
+WS2812B,AliExpress,https://www.aliexpress.com/,WS2812B,$0.10,Adafruit,https://www.adafruit.com/,2857,$4.99,AliExpress is cheaper, Adafruit has better support
+BSS138,Louis Roe,https://www.lcsc.com/,C8546,$0.05,Digi-Key,https://www.digikey.com/,BSS138DW-7-FDICT-ND,$0.15,Louis Roe is cheaper
+W25Q32JVSS,Louis Roe,https://www.lcsc.com/,C11375,$0.30,Digi-Key,https://www.digikey.com/,250-2369-1-ND,$0.70,Louis Roe is cheaper

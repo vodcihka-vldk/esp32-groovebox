@@ -1,0 +1,28 @@
+Reference,Value,Quantity,Footprint,Manufacturer,Part Number,Datasheet,Notes
+U1,ESP32-WROOM-32,1,Module_ESP-32S_ESP-WROOM-32,Espressif,ESP32-WROOM-32,https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf,Main MCU
+U2,AMS1117-3.3,1,Package_TO_SOT_SMD:SOT-223-3_TabPin2,Advanced Monolithic Systems,AMS1117-3.3,http://www.advanced-monolithic.com/pdf/ds1117.pdf,3.3V Regulator
+U3,PCM5102A,1,Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm,Texas Instruments,PCM5102A,http://www.ti.com/lit/ds/symlink/pcm5102a.pdf,Audio DAC
+J1,USB_C_Receptacle_USB2.0,1,Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12,USB-IF,USB-C-31-M-12,https://www.usb.org/sites/default/files/documents/usb_type-c.zip,USB Connector
+J2,Jack_3.5mm_SwitchTR,1,Connector_Audio:Jack_3.5mm_QingPu_WQP-PJ398M,QingPu,WQP-PJ398M,~,Audio Output Jack
+C1,10uF,1,Capacitor_SMD:C_0603_1608Metric,Murata,GRM188R71C106KA73D,~,Power Supply Filter
+C2,22uF,1,Capacitor_SMD:C_0603_1608Metric,Murata,GRM188R71E226MA73D,~,Power Supply Filter
+C3,100nF,1,Capacitor_SMD:C_0402_1005Metric,Murata,GRM155R71C104KA88D,~,Decoupling
+C4,100nF,1,Capacitor_SMD:C_0402_1005Metric,Murata,GRM155R71C104KA88D,~,Decoupling
+C5,10uF,1,Capacitor_SMD:C_0603_1608Metric,Murata,GRM188R71C106KA73D,~,Audio Filter
+C6,10uF,1,Capacitor_SMD:C_0603_1608Metric,Murata,GRM188R71C106KA73D,~,Audio Filter
+C7,10uF,1,Capacitor_SMD:C_0603_1608Metric,Murata,GRM188R71C106KA73D,~,Audio Coupling
+C8,10uF,1,Capacitor_SMD:C_0603_1608Metric,Murata,GRM188R71C106KA73D,~,Audio Coupling
+R1,1K,1,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603JR-071KL,~,Power LED Current Limit
+R2,100K,1,Resistor_SMD:R_0402_1005Metric,Yageo,RC0402FR-07100KL,~,DAC Pull-up
+D1,PWR_LED,1,LED_SMD:LED_0603_1608Metric,Lite-On,LTST-C191KGKT,~,Power Indicator
+SW1,BUTTON_PLAY,1,Button_Switch_SMD:SW_Push_1P1NO_NO_6x6mm_H,TE Connectivity,1825910-6,~,Play Button
+SW2,BUTTON_STOP,1,Button_Switch_SMD:SW_Push_1P1NO_NO_6x6mm_H,TE Connectivity,1825910-6,~,Stop Button
+SW3,BUTTON_REC,1,Button_Switch_SMD:SW_Push_1P1NO_NO_6x6mm_H,TE Connectivity,1825910-6,~,Record Button
+SW4,BUTTON_SHIFT,1,Button_Switch_SMD:SW_Push_1P1NO_NO_6x6mm_H,TE Connectivity,1825910-6,~,Shift Button
+ENC1,ROTARY_ENCODER,1,Encoder:Rotary_Encoder_with_Button_Alps_EC11E,Alps,EC11E,~,Parameter Encoder
+LCD1,SSD1306_128x64,1,Display:OLED_0.96inch_128x64,Adafruit,3315,~,OLED Display
+LED1,WS2812B,1,LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm,World Semi,WS2812B,~,RGB LED Strip
+Q1,MOSFET_N,1,Package_TO_SOT_SMD:SOT-23,Nexperia,BSS138,~,Level Shifter
+Q2,MOSFET_N,1,Package_TO_SOT_SMD:SOT-23,Nexperia,BSS138,~,Level Shifter
+Q3,MOSFET_N,1,Package_TO_SOT_SMD:SOT-23,Nexperia,BSS138,~,Level Shifter
+Q4,MOSFET_N,1,Package_TO_SOT_SMD:SOT-23,Nexperia,BSS138,~,Level Shifter

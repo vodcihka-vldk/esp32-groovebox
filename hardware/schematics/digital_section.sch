@@ -1,0 +1,375 @@
+EESchema Schematic File Version 4
+LIBS:esp32-groovebox-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 1
+Title "ESP32 Groovebox - Digital Section"
+Date "2024-01-01"
+Rev "1.0"
+Comp "GrooveBox Project"
+Comment1 "ESP32 and Digital Logic"
+Comment2 "WiFi, Bluetooth, and Processing"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_ESP32:ESP32-WROOM-32 U4
+U 1 1 5F8B0C40
+P 3500 2000
+F 0 "U4" H 3500 3381 50  0000 C CNN
+F 1 "ESP32-WROOM-32" H 3500 3290 50  0000 C CNN
+F 2 "Module_ESP-32S_ESP-WROOM-32:ESP-WROOM-32" H 3500 2000 50  0001 C CNN
+F 3 "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf" H 3500 2000 50  0001 C CNN
+	1    3500 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Memory_Flash:W25Q32JVSS U5
+U 1 1 5F8B0C41
+P 5500 2000
+F 0 "U5" H 5500 2481 50  0000 C CNN
+F 1 "W25Q32JVSS" H 5500 2390 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_5.23x5.23mm_P1.27mm" H 5500 2000 50  0001 C CNN
+F 3 "http://www.winbond.com/resource-files/w25q32jv%20revg%2003272016%20plus.pdf" H 5500 2000 50  0001 C CNN
+	1    5500 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C9
+U 1 1 5F8B0C42
+P 4500 1800
+F 0 "C9" H 4592 1846 50  0000 L CNN
+F 1 "100nF" H 4592 1755 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 4500 1800 50  0001 C CNN
+F 3 "~" H 4500 1800 50  0001 C CNN
+	1    4500 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C10
+U 1 1 5F8B0C43
+P 4500 2200
+F 0 "C10" H 4592 2246 50  0000 L CNN
+F 1 "100nF" H 4592 2155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 4500 2200 50  0001 C CNN
+F 3 "~" H 4500 2200 50  0001 C CNN
+	1    4500 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C11
+U 1 1 5F8B0C44
+P 6000 1800
+F 0 "C11" H 6092 1846 50  0000 L CNN
+F 1 "100nF" H 6092 1755 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 6000 1800 50  0001 C CNN
+F 3 "~" H 6000 1800 50  0001 C CNN
+	1    6000 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C12
+U 1 1 5F8B0C45
+P 6000 2200
+F 0 "C12" H 6092 2246 50  0000 L CNN
+F 1 "10uF" H 6092 2155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6000 2200 50  0001 C CNN
+F 3 "~" H 6000 2200 50  0001 C CNN
+	1    6000 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Crystal_Small Y1
+U 1 1 5F8B0C46
+P 2500 2000
+F 0 "Y1" H 2500 2225 50  0000 C CNN
+F 1 "26MHz" H 2500 2134 50  0000 C CNN
+F 2 "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm" H 2500 2000 50  0001 C CNN
+F 3 "~" H 2500 2000 50  0001 C CNN
+	1    2500 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C13
+U 1 1 5F8B0C47
+P 2200 1900
+F 0 "C13" H 2292 1946 50  0000 L CNN
+F 1 "12pF" H 2292 1855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2200 1900 50  0001 C CNN
+F 3 "~" H 2200 1900 50  0001 C CNN
+	1    2200 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C14
+U 1 1 5F8B0C48
+P 2200 2100
+F 0 "C14" H 2292 2146 50  0000 L CNN
+F 1 "12pF" H 2292 2055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2200 2100 50  0001 C CNN
+F 3 "~" H 2200 2100 50  0001 C CNN
+	1    2200 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R3
+U 1 1 5F8B0C49
+P 2000 1800
+F 0 "R3" V 1804 1800 50  0000 C CNN
+F 1 "10K" V 1895 1800 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 2000 1800 50  0001 C CNN
+F 3 "~" H 2000 1800 50  0001 C CNN
+	1    2000 1800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R4
+U 1 1 5F8B0C4A
+P 2000 2200
+F 0 "R4" V 1804 2200 50  0000 C CNN
+F 1 "10K" V 1895 2200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 2000 2200 50  0001 C CNN
+F 3 "~" H 2000 2200 50  0001 C CNN
+	1    2000 2200
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3V3 #PWR07
+U 1 1 5F8B0C4B
+P 2000 1400
+F 0 "#PWR07" H 2000 1250 50  0001 C CNN
+F 1 "+3V3" H 2015 1573 50  0000 C CNN
+F 2 "" H 2000 1400 50  0001 C CNN
+F 3 "" H 2000 1400 50  0001 C CNN
+	1    2000 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR08
+U 1 1 5F8B0C4C
+P 4500 1400
+F 0 "#PWR08" H 4500 1250 50  0001 C CNN
+F 1 "+3V3" H 4515 1573 50  0000 C CNN
+F 2 "" H 4500 1400 50  0001 C CNN
+F 3 "" H 4500 1400 50  0001 C CNN
+	1    4500 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR09
+U 1 1 5F8B0C4D
+P 6000 1400
+F 0 "#PWR09" H 6000 1250 50  0001 C CNN
+F 1 "+3V3" H 6015 1573 50  0000 C CNN
+F 2 "" H 6000 1400 50  0001 C CNN
+F 3 "" H 6000 1400 50  0001 C CNN
+	1    6000 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR010
+U 1 1 5F8B0C4E
+P 3500 3500
+F 0 "#PWR010" H 3500 3250 50  0001 C CNN
+F 1 "GND" H 3505 3327 50  0000 C CNN
+F 2 "" H 3500 3500 50  0001 C CNN
+F 3 "" H 3500 3500 50  0001 C CNN
+	1    3500 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR011
+U 1 1 5F8B0C4F
+P 4500 2500
+F 0 "#PWR011" H 4500 2250 50  0001 C CNN
+F 1 "GND" H 4505 2327 50  0000 C CNN
+F 2 "" H 4500 2500 50  0001 C CNN
+F 3 "" H 4500 2500 50  0001 C CNN
+	1    4500 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR012
+U 1 1 5F8B0C50
+P 6000 2500
+F 0 "#PWR012" H 6000 2250 50  0001 C CNN
+F 1 "GND" H 6005 2327 50  0000 C CNN
+F 2 "" H 6000 2500 50  0001 C CNN
+F 3 "" H 6000 2500 50  0001 C CNN
+	1    6000 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR013
+U 1 1 5F8B0C51
+P 2200 2400
+F 0 "#PWR013" H 2200 2150 50  0001 C CNN
+F 1 "GND" H 2205 2227 50  0000 C CNN
+F 2 "" H 2200 2400 50  0001 C CNN
+F 3 "" H 2200 2400 50  0001 C CNN
+	1    2200 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x06_Male J3
+U 1 1 5F8B0C52
+P 6500 2000
+F 0 "J3" H 6472 1978 50  0000 R CNN
+F 1 "Programming" H 6472 2069 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 6500 2000 50  0001 C CNN
+F 3 "~" H 6500 2000 50  0001 C CNN
+	1    6500 2000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2000 1400 2000 1700
+Wire Wire Line
+	2000 1900 2000 2000
+Wire Wire Line
+	2000 2000 2200 2000
+Wire Wire Line
+	2200 2000 2200 1800
+Wire Wire Line
+	2000 2100 2000 2200
+Wire Wire Line
+	2000 2200 2200 2200
+Wire Wire Line
+	2200 2200 2200 2000
+Connection ~ 2200 2000
+Wire Wire Line
+	2200 2400 2200 2300
+Wire Wire Line
+	2200 2000 2700 2000
+Wire Wire Line
+	2400 2000 2200 2000
+Wire Wire Line
+	2600 2000 2700 2000
+Wire Wire Line
+	2600 2100 2700 2100
+Wire Wire Line
+	2700 2100 2200 2100
+Connection ~ 2200 2100
+Wire Wire Line
+	2200 2100 2200 2200
+Wire Wire Line
+	3500 3400 3500 3500
+Wire Wire Line
+	4500 1400 4500 1700
+Wire Wire Line
+	4500 1900 4500 2100
+Wire Wire Line
+	4500 2300 4500 2500
+Wire Wire Line
+	6000 1400 6000 1700
+Wire Wire Line
+	6000 1900 6000 2100
+Wire Wire Line
+	6000 2300 6000 2500
+Wire Wire Line
+	4300 1800 4500 1800
+Wire Wire Line
+	4300 1900 4500 1900
+Wire Wire Line
+	4300 2200 4500 2200
+Wire Wire Line
+	4300 2300 4500 2300
+Wire Wire Line
+	5100 1800 6000 1800
+Wire Wire Line
+	5100 1900 6000 1900
+Wire Wire Line
+	5100 2000 5200 2000
+Wire Wire Line
+	5100 2100 5200 2100
+Wire Wire Line
+	5100 2200 6000 2200
+Wire Wire Line
+	5100 2300 6000 2300
+Wire Wire Line
+	5800 1800 6000 1800
+Connection ~ 6000 1800
+Wire Wire Line
+	5800 1900 6000 1900
+Connection ~ 6000 1900
+Wire Wire Line
+	5800 2000 6000 2000
+Wire Wire Line
+	6000 2000 6000 2100
+Connection ~ 6000 2100
+Wire Wire Line
+	5800 2100 6000 2100
+Wire Wire Line
+	5800 2200 6000 2200
+Connection ~ 6000 2200
+Wire Wire Line
+	5800 2300 6000 2300
+Connection ~ 6000 2300
+Wire Wire Line
+	6700 1700 6800 1700
+Wire Wire Line
+	6800 1700 6800 1400
+Wire Wire Line
+	6800 1400 6000 1400
+Connection ~ 6000 1400
+Wire Wire Line
+	6700 1800 6800 1800
+Wire Wire Line
+	6800 1800 6800 2500
+Wire Wire Line
+	6800 2500 6000 2500
+Connection ~ 6000 2500
+Wire Wire Line
+	6700 1900 6800 1900
+Wire Wire Line
+	6800 1900 6800 2500
+Wire Wire Line
+	6700 2000 6800 2000
+Wire Wire Line
+	6800 2000 6800 2500
+Wire Wire Line
+	6700 2100 6800 2100
+Wire Wire Line
+	6800 2100 6800 2500
+Wire Wire Line
+	6700 2200 6800 2200
+Wire Wire Line
+	6800 2200 6800 2500
+Text Label 2700 2000 0    50   ~ 0
+XTAL_CLK
+Text Label 2700 2100 0    50   ~ 0
+XTAL_DATA
+Text Label 4300 1800 0    50   ~ 0
+3V3
+Text Label 4300 1900 0    50   ~ 0
+3V3
+Text Label 4300 2200 0    50   ~ 0
+GND
+Text Label 4300 2300 0    50   ~ 0
+GND
+Text Label 5100 1800 0    50   ~ 0
+3V3
+Text Label 5100 1900 0    50   ~ 0
+3V3
+Text Label 5100 2000 0    50   ~ 0
+SPI_CLK
+Text Label 5100 2100 0    50   ~ 0
+SPI_MOSI
+Text Label 5100 2200 0    50   ~ 0
+SPI_MISO
+Text Label 5100 2300 0    50   ~ 0
+SPI_CS
+Text Label 6700 1700 0    50   ~ 0
+3V3
+Text Label 6700 1800 0    50   ~ 0
+GND
+Text Label 6700 1900 0    50   ~ 0
+TXD0
+Text Label 6700 2000 0    50   ~ 0
+RXD0
+Text Label 6700 2100 0    50   ~ 0
+GPIO0
+Text Label 6700 2200 0    50   ~ 0
+RESET
+$EndSCHEMATC
