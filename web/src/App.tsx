@@ -1,49 +1,95 @@
 import React from 'react';
-import { StepGrid } from './components/sequencer/StepGrid';
-import { useProjectManager } from './hooks/useProjectManager';
-import { AudioService } from './services/AudioService';
-import { createEmptyProject } from '../../shared/schemas';
+import {
+  useProject,
+  useIsPlaying,
+  useBPM,
+  useCurrentPattern,
+  useCurrentTrack,
+  useCurrentPatternData,
+  useGrooveboxActions,
+  useProjectUtils,
+} from './store/useGrooveboxStore';
 import './App.css';
 
+const TRACK_NAMES = ['Kick', 'Snare', 'Clap', 'HiHat C', 'HiHat O', 'Crash', 'Tom', 'Perc'];
+
+function StepRow({
+  trackIndex,
+  trackName,
+  steps,
+  isSelected,
+  volume,
+  onToggle,
+  onSelect,
+  onVolumeChange,
+}: {
+  trackIndex: number;
+  trackName: string;
+  steps: { active: boolean; velocity?: number }[];
+  isSelected: boolean;
+  volume: number;
+  onToggle: (step: number) => void;
+  onSelect: () => void;
+  onVolumeChange: (v: number) => void;
+}) {
+  return (
+    <div className={`track-row ${isSelected ? 'selected' : ''}`} onClick={onSelect}>
+      <div className="track-label">
+        <span className="track-name">{trackName}</span>
+        <input
+          type="range"
+          min={0}
+          max={100}
+          value={volume}
+          className="vol-slider"
+          onClick={(e) => e.stopPropagation()}
+          onChange={(e) => onVolumeChange(Number(e.target.value))}
+        />
+      </div>
+      <div className="steps">
+        {steps.slice(0, 16).map((s, i) => (
+          <button
+            key={i}
+            className={`step ${s.active ? 'on' : ''} ${i % 4 === 0 ? 'bar' : ''}`}
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggle(i);
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function App() {
-  const { project, updateChannel, updateStepData, createNewProject } = useProjectManager();
-  const [audioService] = React.useState(() => new AudioService());
+  const project = useProject();
+  const isPlaying = useIsPlaying();
+  const bpm = useBPM();
+  const currentPattern = useCurrentPattern();
+  const currentTrack = useCurrentTrack();
+  const patternData = useCurrentPatternData();
 
+  const {
+    setPlaying,
+    setBPM,
+    toggleStep,
+    updateChannel,
+    setCurrentTrack,
+    setCurrentPattern,
+  } = useGrooveboxActions();
+  const { createNewProject, exportToESP32 } = useProjectUtils();
+
+  // Init project
   React.useEffect(() => {
-    // Создаем пустой проект при загрузке
     createNewProject('ESP32 Groovebox Demo');
-    
-    // Инициализируем аудио сервис
-    audioService.loadSamples().catch(console.error);
-  }, [createNewProject, audioService]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const handleStepToggle = (patternIndex: number, trackIndex: number, stepIndex: number) => {
-    if (!project) return;
-    
-    const currentStep = project.patterns[patternIndex].tracks[trackIndex].steps[stepIndex];
-    updateStepData(patternIndex, trackIndex, stepIndex, {
-      active: !currentStep.active,
-      velocity: currentStep.velocity || 100
-    });
-  };
-
-  const handleVelocityChange = (patternIndex: number, trackIndex: number, stepIndex: number, velocity: number) => {
-    updateStepData(patternIndex, trackIndex, stepIndex, { velocity });
-  };
-
-  const handleVolumeChange = (trackIndex: number, volume: number) => {
-    updateChannel(trackIndex, 'volume', volume);
-    
-    // Применяем к аудио сервису
-    if (project) {
-      audioService.applyChannelParameters(trackIndex, project.patterns[0].tracks[trackIndex].channel);
-    }
-  };
-
-  if (!project) {
+  if (!project || !patternData) {
     return (
-      <div className="loading">
-        <h1>ESP32 Groovebox</h1>
+      <div className="app loading-screen">
+        <h1>🎵 ESP32 Groovebox</h1>
         <p>Loading...</p>
       </div>
     );
@@ -51,71 +97,95 @@ function App() {
 
   return (
     <div className="app">
+      {/* Header */}
       <header className="header">
         <h1>🎵 ESP32 Groovebox</h1>
-        <p>Cross-platform Web Interface</p>
+        <span className="subtitle">Web UI · Zod + Zustand + React</span>
       </header>
 
-      <main className="main">
-        <div className="controls">
-          <div className="project-info">
-            <h2>{project.name}</h2>
-            <p>BPM: {project.bpm} | Master: {project.masterVolume}%</p>
-          </div>
-          
-          <div className="transport">
-            <button onClick={() => audioService.playStep(0)}>
-              🎵 Play Kick
-            </button>
-            <button onClick={() => audioService.playStep(1)}>
-              🥁 Play Snare
-            </button>
-            <button onClick={() => audioService.playStep(2)}>
-              🎩 Play HiHat
-            </button>
-            <button onClick={() => audioService.stopAll()}>
-              ⏹️ Stop All
-            </button>
-          </div>
-        </div>
+      {/* Transport */}
+      <section className="transport">
+        <button className={`btn ${isPlaying ? 'active' : ''}`} onClick={() => setPlaying(!isPlaying)}>
+          {isPlaying ? '⏸ Pause' : '▶ Play'}
+        </button>
+        <button className="btn" onClick={() => setPlaying(false)}>⏹ Stop</button>
+        <button className="btn" onClick={() => {
+          const data = exportToESP32();
+          if (data) {
+            console.log('ESP32 JSON:', data);
+            alert('Exported — check console');
+          }
+        }}>📤 Export</button>
 
-        <div className="sequencer">
-          <h2>16-Step Sequencer</h2>
-          {project.patterns[0].tracks.map((track, trackIndex) => (
-            <div key={track.id} className="track">
-              <div className="track-header">
-                <h3>{track.name}</h3>
-                <div className="volume-control">
-                  <label>Volume: {track.channel.volume}%</label>
-                  <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={track.channel.volume}
-                    onChange={(e) => handleVolumeChange(trackIndex, parseInt(e.target.value))}
-                  />
-                </div>
-              </div>
-              
-              <StepGrid
-                patternId={project.patterns[0].id}
-                trackIndex={trackIndex}
+        <div className="bpm-block">
+          <label>BPM</label>
+          <input
+            type="number"
+            min={40}
+            max={300}
+            value={bpm}
+            onChange={(e) => setBPM(Number(e.target.value))}
+          />
+          <input
+            type="range"
+            min={40}
+            max={300}
+            value={bpm}
+            onChange={(e) => setBPM(Number(e.target.value))}
+          />
+        </div>
+      </section>
+
+      {/* Pattern selector */}
+      <section className="patterns">
+        {Array.from({ length: 8 }, (_, i) => (
+          <button
+            key={i}
+            className={`pat-btn ${currentPattern === i ? 'active' : ''}`}
+            onClick={() => setCurrentPattern(i)}
+          >
+            P{i + 1}
+          </button>
+        ))}
+      </section>
+
+      {/* Sequencer grid */}
+      <section className="sequencer">
+        {patternData.tracks.map((track, ti) => (
+          <StepRow
+            key={track.id}
+            trackIndex={ti}
+            trackName={TRACK_NAMES[ti] || track.name}
+            steps={track.steps}
+            isSelected={currentTrack === ti}
+            volume={track.channel.volume}
+            onToggle={(si) => toggleStep(currentPattern, ti, si)}
+            onSelect={() => setCurrentTrack(ti)}
+            onVolumeChange={(v) => updateChannel(ti, { volume: v })}
+          />
+        ))}
+      </section>
+
+      {/* DSP */}
+      <section className="dsp">
+        <h3>DSP Effects</h3>
+        <div className="dsp-grid">
+          {(['drive', 'reverb', 'delay', 'bitcrush'] as const).map((fx) => (
+            <div key={fx} className="dsp-knob">
+              <label>{fx}: {(project.dsp as any)[fx]}%</label>
+              <input
+                type="range"
+                min={0}
+                max={100}
+                value={(project.dsp as any)[fx]}
               />
             </div>
           ))}
         </div>
-
-        <div className="info">
-          <h3>Zod Validation ✅</h3>
-          <p>All data is type-safe and validated</p>
-          <p>Tone.js Audio Engine 🎵</p>
-          <p>ArduinoJson Compatible 🔄</p>
-        </div>
-      </main>
+      </section>
 
       <footer className="footer">
-        <p>ESP32 Groovebox - Professional DIY Drum Machine</p>
-        <p>Web Interface with Zod + Tone.js + React</p>
+        ESP32 Groovebox — Cross-platform Drum Machine
       </footer>
     </div>
   );
